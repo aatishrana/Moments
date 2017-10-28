@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Momente</string>
+    <string name="please_insert_your_data">Bitte geben Sie Ihre Daten ein</string>
+    <string name="done">Erledigt</string>
+    <string name="date_of_birth">Geburtsdatum</string>
+    <string name="time_of_birth">Zeit der Geburt</string>
+
+</resources>
