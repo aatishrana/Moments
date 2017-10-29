@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Moments</string>
-    <string name="please_insert_your_data">Please insert your data</string>
-    <string name="done">Done</string>
-    <string name="date_of_birth">Date of birth</string>
-    <string name="time_of_birth">Time of birth</string>
+    <string name="app_name">Στιγμές</string>
+    <string name="please_insert_your_data">Καταχωρίστε τα δεδομένα σας</string>
+    <string name="done">Πλήρης</string>
+    <string name="date_of_birth">ΗΜΕΡΟΜΗΝΙΑ ΓΕΝΝΗΣΗΣ</string>
+    <string name="time_of_birth">Ωρα γέννησης</string>
+    <string name="caption_lived">Ο χρόνος που έχετε ζήσει</string>
+    <string name="caption_left">Ο χρόνος που έχετε αφήσει</string>
 </resources>

@@ -4,4 +4,6 @@
     <string name="done">完了</string>
     <string name="date_of_birth">生年月日</string>
     <string name="time_of_birth">お誕生日</string>
+    <string name="caption_lived">あなたが住んでいた時</string>
+    <string name="caption_left">あなたが持っている時間</string>
 </resources>

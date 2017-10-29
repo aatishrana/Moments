@@ -4,4 +4,6 @@
     <string name="done">Fini</string>
     <string name="date_of_birth">Date de naissance</string>
     <string name="time_of_birth">Heure de naissance</string>
+    <string name="caption_lived">Le temps que tu as vécu</string>
+    <string name="caption_left">Le temps qu\'il vous reste</string>
 </resources>

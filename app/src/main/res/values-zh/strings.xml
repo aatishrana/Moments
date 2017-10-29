@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Moments</string>
-    <string name="please_insert_your_data">Please insert your data</string>
-    <string name="done">Done</string>
-    <string name="date_of_birth">Date of birth</string>
-    <string name="time_of_birth">Time of birth</string>
+    <string name="app_name">时刻</string>
+    <string name="please_insert_your_data">请插入您的数据</string>
+    <string name="done">完成</string>
+    <string name="date_of_birth">出生日期</string>
+    <string name="time_of_birth">出生时间</string>
+    <string name="caption_lived">你住的时候</string>
+    <string name="caption_left">你有时间</string>
 </resources>

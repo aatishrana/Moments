@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Moments</string>
-    <string name="please_insert_your_data">Please insert your data</string>
-    <string name="done">Done</string>
-    <string name="date_of_birth">Date of birth</string>
-    <string name="time_of_birth">Time of birth</string>
+    <string name="app_name">Моменты</string>
+    <string name="please_insert_your_data">Вставьте свои данные</string>
+    <string name="done">Готово</string>
+    <string name="date_of_birth">Дата рождения</string>
+    <string name="time_of_birth">Время рождения</string>
+    <string name="caption_lived">Время, в которое вы жили</string>
+    <string name="caption_left">Время, которое у вас есть</string>
 </resources>

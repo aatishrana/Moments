@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Moments</string>
-    <string name="please_insert_your_data">Please insert your data</string>
-    <string name="done">Done</string>
-    <string name="date_of_birth">Date of birth</string>
-    <string name="time_of_birth">Time of birth</string>
+    <string name="app_name">순간들</string>
+    <string name="please_insert_your_data">데이터를 입력하십시오.</string>
+    <string name="done">끝난</string>
+    <string name="date_of_birth">생년월일</string>
+    <string name="time_of_birth">출생 시간</string>
+    <string name="caption_lived">네가 살았던 시간</string>
+    <string name="caption_left">네가 가진 시간이야.</string>
 </resources>

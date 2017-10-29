@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Moments</string>
-    <string name="please_insert_your_data">Please insert your data</string>
-    <string name="done">Done</string>
-    <string name="date_of_birth">Date of birth</string>
-    <string name="time_of_birth">Time of birth</string>
+    <string name="app_name">Khoảnh khắc</string>
+    <string name="please_insert_your_data">Vui lòng chèn dữ liệu của bạn</string>
+    <string name="done">Làm xong</string>
+    <string name="date_of_birth">Ngày sinh</string>
+    <string name="time_of_birth">Thời gian sinh</string>
+    <string name="caption_lived">Thời gian bạn đã sống</string>
+    <string name="caption_left">Thời gian bạn có</string>
 </resources>

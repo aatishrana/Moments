@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Moments</string>
-    <string name="please_insert_your_data">Please insert your data</string>
-    <string name="done">Done</string>
-    <string name="date_of_birth">Date of birth</string>
-    <string name="time_of_birth">Time of birth</string>
+    <string name="please_insert_your_data">Vennligst fyll inn dine data</string>
+    <string name="done">Ferdig</string>
+    <string name="date_of_birth">Fødselsdato</string>
+    <string name="time_of_birth">Fødtid</string>
+    <string name="caption_lived">Tiden du har bodd</string>
+    <string name="caption_left">Tiden du har</string>
 </resources>
