@@ -57,6 +57,19 @@
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/colorPrimaryLight"/>
 
+            <TextView
+                android:id="@+id/activity_main_tv_time_lived_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/activity_main_tv_format"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="@string/caption_lived"
+                android:alpha="0.5"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/colorPrimaryLight"
+                android:visibility="invisible"/>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -82,6 +95,19 @@
                 android:layout_below="@+id/activity_main_tv_time_left"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/colorPrimaryLight"/>
+
+            <TextView
+                android:id="@+id/activity_main_tv_time_left_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/activity_main_tv_format2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:alpha="0.5"
+                android:text="@string/caption_left"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/colorPrimaryLight"
+                android:visibility="invisible"/>
 
         </RelativeLayout>
 

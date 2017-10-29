@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.aatishrana.moments.MyApplication;
@@ -60,6 +61,10 @@ public class MainActivity extends Activity
     TextView tvFormat;
     @BindView(R.id.activity_main_tv_format2)
     TextView tvFormat2;
+    @BindView(R.id.activity_main_tv_time_lived_caption)
+    TextView tvLivedCaption;
+    @BindView(R.id.activity_main_tv_time_left_caption)
+    TextView tvWillLiveCaption;
     @BindView(R.id.adView)
     AdView adView;
 
@@ -161,6 +166,8 @@ public class MainActivity extends Activity
                             {
                                 tvLived.setText(data);
                                 tvFormat.setText(String.valueOf(formats[currentFormat]));
+                                if (tvLivedCaption.getVisibility() != View.VISIBLE)
+                                    tvLivedCaption.setVisibility(View.VISIBLE);
                             }
                         });
 
@@ -192,6 +199,8 @@ public class MainActivity extends Activity
                             {
                                 tvWillLive.setText(data);
                                 tvFormat2.setText(String.valueOf(formats[currentFormat]));
+                                if (tvWillLiveCaption.getVisibility() != View.VISIBLE)
+                                    tvWillLiveCaption.setVisibility(View.VISIBLE);
                             }
                         });
 

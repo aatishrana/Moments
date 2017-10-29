@@ -4,6 +4,8 @@
     <string name="done">Done</string>
     <string name="date_of_birth">Date of birth</string>
     <string name="time_of_birth">Time of birth</string>
+    <string name="caption_lived" translatable="false">The time you have lived</string>
+    <string name="caption_left" translatable="false">The time you have left</string>
 
     <string name="adMob_app_unit_id" translatable="false">ca-app-pub-5201300887954708/5498147878</string>
     <string name="adMob_app_id" translatable="false">ca-app-pub-5201300887954708~2544681470</string>

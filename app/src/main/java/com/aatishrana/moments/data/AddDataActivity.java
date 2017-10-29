@@ -63,7 +63,6 @@ public class AddDataActivity extends Activity
     @BindView(R.id.activity_data_et_time)
     EditText etTime;
 
-    private Subscription subscription;
     private boolean isDataAvailable = false;
     private int from = fromSplash;
     private String countryCode = "";
@@ -81,14 +80,6 @@ public class AddDataActivity extends Activity
         countryCode = getUserCountry(telephonyManager);
     }
 
-    @Override
-    protected void onDestroy()
-    {
-        if (subscription != null)
-            subscription.unsubscribe();
-        super.onDestroy();
-    }
-
     private void initViews()
     {
         etDate.setInputType(InputType.TYPE_NULL);
@@ -100,129 +91,6 @@ public class AddDataActivity extends Activity
             etDate.setText(stDate);
             etTime.setText(stTime);
         }
-//        subscription = Observable.create(new Observable.OnSubscribe<String>()
-//        {
-//            private boolean ifCharIsInt(char a)
-//            {
-//                switch (a)
-//                {
-//                    case 48://0
-//                    case 49://1
-//                    case '2':
-//                    case '3':
-//                    case '4':
-//                    case '5':
-//                    case '6':
-//                    case '7':
-//                    case '8':
-//                    case '9':
-//                        return true;
-//                    default:
-//                        return false;
-//                }
-//            }
-//
-//            @Override
-//            public void call(Subscriber<? super String> subscriber)
-//            {
-//                Map<String, String> mapData = new HashMap<String, String>();
-//                URL url;
-//                HttpURLConnection urlConnection = null;
-//                try
-//                {
-//                    String response = "";
-//                    url = new URL("https://www.cia.gov/library/publications/the-world-factbook/rankorder/rawdata_2102.txt");
-//                    urlConnection = (HttpURLConnection) url.openConnection();
-//                    InputStream in = urlConnection.getInputStream();
-//                    InputStreamReader isw = new InputStreamReader(in);
-//                    int data = isw.read();
-//                    char previousChar = '\r';
-//                    while (data != -1)
-//                    {
-//                        String key = "";
-//                        String value = "";
-////                        String current = String.valueOf((char) data);
-//                        char current = (char) data;
-//                        data = isw.read();
-////                        if (!(previousChar.equals(" ") && current.equals(" ")))
-//                        if (!(previousChar == ' ' && current == ' '))
-//                        {
-//                            //if previousChar was char and current is no.
-//                            //start appending in value
-//                            if (!ifCharIsInt(previousChar) && ifCharIsInt(current))
-//                            {
-//                                value = value + current;
-//                            }
-//                            //if previousChar was no. and current is char
-//                            //start appending in key
-//                            else if (ifCharIsInt(previousChar) && ifCharIsInt(current))
-//                            {
-//                                key = key + current;
-//                            }
-//                            //if previousChar was \r and current is no.
-//                            //skip
-//                            else if (previousChar == '\r' && ifCharIsInt(current))
-//                            {
-//                                mapData.put(key, value);
-//                                key = "";
-//                                value = "";
-//                            }
-//
-////                            response = response + current;
-//////                            System.out.print(response);
-////                            if (current == '\r')
-////                                System.out.print(",");
-////                            else
-////                                System.out.print(current);
-////                            else if (current.equals("\r"))
-////                                System.out.print(".");
-////                            else
-////                            {
-////                                response = response + current;
-////                            }
-//                            previousChar = current;
-//                        }
-//
-//
-//                    }
-//                    subscriber.onNext(response);
-//                    subscriber.onCompleted();
-//
-//                } catch (Exception e)
-//                {
-//                    e.printStackTrace();
-//                } finally
-//                {
-//                    if (urlConnection != null)
-//                    {
-//                        urlConnection.disconnect();
-//                    }
-//                }
-//            }
-//        })
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-////                .map(new Func1<String, String>()
-////                {
-////                    @Override
-////                    public String call(String s)
-////                    {
-////                        String key = "";
-////                        String value = "";
-////                        for (int i = 0; i < s.length(); i++)
-////                        {
-////                            char current = s.charAt(i);
-//////                            System.out.println(current);
-//////                            if (current == '\r\n')
-//////                            {
-//////                                System.out.print(',');
-//////                            } else
-//////                                System.out.print(',');
-////                        }
-////                        return null;
-////                    }
-////                })
-//                .subscribe();
     }
 
     @OnClick(R.id.activity_data_et_date)
@@ -252,6 +120,7 @@ public class AddDataActivity extends Activity
 
                     }
                 }, mYear, mMonth, mDay);
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
         datePickerDialog.show();
     }
 
