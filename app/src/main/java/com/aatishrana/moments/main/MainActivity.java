@@ -117,8 +117,6 @@ public class MainActivity extends Activity
     {
         MobileAds.initialize(this, getString(R.string.adMob_app_id));
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("241F0437B86EFB7FF7B983D0C71BB1E8")
                 .build();
         adView.loadAd(adRequest);
     }
