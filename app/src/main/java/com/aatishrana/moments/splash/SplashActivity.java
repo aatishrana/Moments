@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.aatishrana.moments.MyApplication;
+import com.aatishrana.moments.R;
 import com.aatishrana.moments.data.AddDataActivity;
 import com.aatishrana.moments.main.MainActivity;
 

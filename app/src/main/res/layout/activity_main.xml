@@ -36,7 +36,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:src="@mipmap/ic_launcher"/>
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_launcher_cake"/>
 
             <TextView
                 android:id="@+id/activity_main_tv_time_lived"
@@ -70,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textAppearance="?android:textAppearanceLarge"
-                android:textSize="44sp"
                 android:textColor="@color/colorPrimaryLight"
+                android:textSize="44sp"
                 android:textStyle="bold"/>
 
             <TextView

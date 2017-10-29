@@ -78,7 +78,7 @@ public class MainActivity extends Activity
         isDataAvailable = getIntent().getBooleanExtra(isDataPresent, false);
         if (savedInstanceState != null)
             currentFormat = savedInstanceState.getInt(format);
-        init();
+        initAd();
     }
 
     @Override
@@ -86,6 +86,8 @@ public class MainActivity extends Activity
     {
         if (adView != null)
             adView.pause();
+
+        disposeAll();
         super.onPause();
     }
 
@@ -95,6 +97,8 @@ public class MainActivity extends Activity
         super.onResume();
         if (adView != null)
             adView.resume();
+
+        init();
     }
 
     @Override
@@ -104,7 +108,7 @@ public class MainActivity extends Activity
         outState.putInt(format, currentFormat);
     }
 
-    private void init()
+    private void initAd()
     {
         MobileAds.initialize(this, getString(R.string.adMob_app_id));
         AdRequest adRequest = new AdRequest.Builder()
@@ -112,6 +116,10 @@ public class MainActivity extends Activity
                 .addTestDevice("241F0437B86EFB7FF7B983D0C71BB1E8")
                 .build();
         adView.loadAd(adRequest);
+    }
+
+    private void init()
+    {
         if (isDataAvailable)
         {
             try
@@ -227,8 +235,13 @@ public class MainActivity extends Activity
     protected void onDestroy()
     {
         if (adView != null) adView.destroy();
+        disposeAll();
+        super.onDestroy();
+    }
+
+    private void disposeAll()
+    {
         if (subscriptionLived != null) subscriptionLived.unsubscribe();
         if (subscriptionWillLive != null) subscriptionWillLive.unsubscribe();
-        super.onDestroy();
     }
 }
