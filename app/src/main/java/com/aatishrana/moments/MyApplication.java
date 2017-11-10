@@ -1,7 +1,6 @@
 package com.aatishrana.moments;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.aatishrana.moments.di.AppComponent;
 import com.aatishrana.moments.di.AppModule;

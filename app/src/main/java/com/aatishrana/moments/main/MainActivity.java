@@ -26,12 +26,13 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import rx.Observable;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 
 import static com.aatishrana.moments.utils.SharedData.dateData;
 import static com.aatishrana.moments.utils.SharedData.dateDataD;
@@ -42,7 +43,8 @@ import static com.aatishrana.moments.utils.SharedData.timeData;
 
 public class MainActivity extends Activity
 {
-    private Subscription subscriptionLived, subscriptionWillLive;
+    private Disposable subscriptionLived;
+    private Disposable subscriptionWillLive;
 
     public static Intent getIntent(Context context, boolean isDataAvailable)
     {
@@ -139,10 +141,10 @@ public class MainActivity extends Activity
                 //start the loop and show seconds
                 subscriptionLived = Observable.interval(1000, TimeUnit.MILLISECONDS)
                         .subscribeOn(Schedulers.io())
-                        .map(new Func1<Long, String>()
+                        .map(new Function<Long, String>()
                         {
                             @Override
-                            public String call(Long aLong)
+                            public String apply(@NonNull Long aLong) throws Exception
                             {
                                 Date currentDate = new Date();
                                 return String.valueOf(
@@ -157,10 +159,10 @@ public class MainActivity extends Activity
                             }
                         })
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Action1<String>()
+                        .subscribe(new Consumer<String>()
                         {
                             @Override
-                            public void call(String data)
+                            public void accept(String data) throws Exception
                             {
                                 tvLived.setText(data);
                                 tvFormat.setText(String.valueOf(formats[currentFormat]));
@@ -172,10 +174,10 @@ public class MainActivity extends Activity
 
                 subscriptionWillLive = Observable.interval(1000, TimeUnit.MILLISECONDS)
                         .subscribeOn(Schedulers.io())
-                        .map(new Func1<Long, String>()
+                        .map(new Function<Long, String>()
                         {
                             @Override
-                            public String call(Long aLong)
+                            public String apply(@NonNull Long aLong) throws Exception
                             {
                                 Date currentDate = new Date();
                                 return String.valueOf(
@@ -190,10 +192,10 @@ public class MainActivity extends Activity
                             }
                         })
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Action1<String>()
+                        .subscribe(new Consumer<String>()
                         {
                             @Override
-                            public void call(String data)
+                            public void accept(String data) throws Exception
                             {
                                 tvWillLive.setText(data);
                                 tvFormat2.setText(String.valueOf(formats[currentFormat]));
@@ -248,7 +250,7 @@ public class MainActivity extends Activity
 
     private void disposeAll()
     {
-        if (subscriptionLived != null) subscriptionLived.unsubscribe();
-        if (subscriptionWillLive != null) subscriptionWillLive.unsubscribe();
+        if (subscriptionLived != null) subscriptionLived.dispose();
+        if (subscriptionWillLive != null) subscriptionWillLive.dispose();
     }
 }

@@ -29,7 +29,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import rx.Subscription;
 
 import static com.aatishrana.moments.utils.SharedData.dateData;
 import static com.aatishrana.moments.utils.SharedData.dateDataD;
